@@ -7,7 +7,7 @@ Welcome to the **Language Learning Flashcard Application**! This interactive web
 ### 🚀 Features
 
 - **Interactive Flashcards**: Flip flashcards to see word translations.
-- **Language Selection**: Choose your preferred language from a dropdown menu.
+- **Language Selection**: Choose your preferred language from a dropdown menu Spanish & Urdu.
 - **Mark Words as Learned**: Track progress by marking words as learned.
 - **Quiz Mode**: Test your knowledge with a quiz on learned words.
 - **Progress Tracking**: Keep tabs on how many words you've learned.
@@ -45,7 +45,7 @@ Welcome to the **Language Learning Flashcard Application**! This interactive web
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/Language-Learning-Flashcards.git
+   git clone https://github.com/M-Aitisam/Language-Learning-Flashcards.git
    ```
 
 2. **Navigate to the Project Directory**:
@@ -59,7 +59,7 @@ Welcome to the **Language Learning Flashcard Application**! This interactive web
    ```
 
 4. **Open in Browser**:
-   Navigate to `http://localhost:5000` to start using the app.
+   Navigate to `http://localhost:3000` to start using the app.
 
 ---
 
@@ -88,7 +88,7 @@ Welcome to the **Language Learning Flashcard Application**! This interactive web
 
 ### 📧 Support
 
-For any issues or suggestions, feel free to create an issue in this repository or reach out to us via email: [support@example.com](mailto:support@example.com).
+For any issues or suggestions, feel free to create an issue in this repository or reach out to us via email: [support@example.com](mailto:aitisamahmed@24gmail.com).
 
 ---
 
