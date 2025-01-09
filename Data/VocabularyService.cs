@@ -26,9 +26,9 @@ namespace Language_Learning_Flashcards.Data
         public IEnumerable<VocabularyWord> GetAllWords() => _words;
 
         public IEnumerable<VocabularyWord> GetWordsByLanguage(string? language) =>
-            string.IsNullOrWhiteSpace(language)
-                ? Enumerable.Empty<VocabularyWord>()
-                : _words.Where(w => w.Language?.Equals(language, StringComparison.OrdinalIgnoreCase) == true);
+     string.IsNullOrWhiteSpace(language)
+         ? Enumerable.Empty<VocabularyWord>()
+         : _words.Where(w => w.Language?.Equals(language, StringComparison.OrdinalIgnoreCase) == true);
 
         public void MarkAsLearned(int wordId)
         {
