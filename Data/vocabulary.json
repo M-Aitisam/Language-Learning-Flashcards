@@ -1,0 +1,20 @@
+﻿[
+	{
+		"WordId": 1,
+		"Word": "Hello",
+		"Translation": "Hola",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 2,
+		"Word": "Goodbye",
+		"Translation": "Adiós",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 3,
+		"Word": "Thank You",
+		"Translation": "Gracias",
+		"Language": "Spanish"
+	}
+]

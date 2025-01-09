@@ -1,0 +1,101 @@
+﻿@page "/flash"
+@inject VocabularyService VocabularyService
+@using Language_Learning_Flashcards.Data
+
+<h3>Flashcard</h3>
+
+<select @onchange="UpdateLanguage">
+    <option value="">Select Language</option>
+    @foreach (var language in availableLanguages)
+    {
+        <option value="@language">@language</option>
+    }
+</select>
+
+@if (currentWord != null)
+{
+    <div class="flashcard" @onclick="FlipCard">
+        @if (showWord)
+        {
+            <p>@currentWord?.Word</p>
+        }
+        else
+        {
+            <p>@currentWord?.Translation</p>
+        }
+    </div>
+
+    <button @onclick="MarkAsLearned" disabled="@(!CanMarkAsLearned)">Mark as Learned</button>
+    <button @onclick="SkipWord">Skip</button>
+}
+
+@code {
+    private string? selectedLanguage;
+    private VocabularyWord? currentWord;
+    private Queue<VocabularyWord> wordsQueue = new();
+    private bool showWord = true;
+    private List<string> availableLanguages = new();
+
+    protected override void OnInitialized()
+    {
+        // Preload vocabulary data and determine available languages
+        var allWords = VocabularyService.GetAllWords();
+        availableLanguages = allWords.Select(w => w.Language).Distinct().ToList();
+
+        // Default to the first language (if any)
+        if (availableLanguages.Any())
+        {
+            selectedLanguage = availableLanguages.First();
+            UpdateWordsQueue();
+        }
+    }
+
+    private void UpdateLanguage(ChangeEventArgs e)
+    {
+        selectedLanguage = e.Value?.ToString();
+        UpdateWordsQueue();
+    }
+
+    private void UpdateWordsQueue()
+    {
+        if (!string.IsNullOrWhiteSpace(selectedLanguage))
+        {
+            var words = VocabularyService.GetWordsByLanguage(selectedLanguage);
+            wordsQueue = new Queue<VocabularyWord>(words);
+            LoadNextWord();
+        }
+        else
+        {
+            wordsQueue.Clear();
+            currentWord = null;
+        }
+    }
+
+    private void LoadNextWord()
+    {
+        if (wordsQueue != null && wordsQueue.Count > 0)
+        {
+            currentWord = wordsQueue.Dequeue();
+            showWord = true;
+        }
+        else
+        {
+            currentWord = null;
+        }
+    }
+
+    private void FlipCard() => showWord = !showWord;
+
+    private void MarkAsLearned()
+    {
+        if (currentWord != null)
+        {
+            VocabularyService.MarkAsLearned(currentWord.WordId);
+            LoadNextWord();
+        }
+    }
+
+    private void SkipWord() => LoadNextWord();
+
+    private bool CanMarkAsLearned => currentWord != null;
+}
