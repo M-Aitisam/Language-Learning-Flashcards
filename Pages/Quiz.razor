@@ -2,37 +2,45 @@
 @inject VocabularyService VocabularyService
 @using Language_Learning_Flashcards.Data
 
-<h3>Quiz Mode</h3>
 
-@if (learnedWords != null && learnedWords.Any())
-{
-    <div>
-        <h4>Test your knowledge</h4>
-        @if (currentQuizWord != null)
-        {
-            <p>What is the translation for: <strong>@currentQuizWord.Word</strong>?</p>
+<div class="container mt-5">
+    <h3>Quiz Mode</h3>
 
-            <input @bind="userAnswer" placeholder="Your answer" />
-
-            <button @onclick="CheckAnswer">Submit</button>
-
-            @if (showResult)
+    @if (learnedWords != null && learnedWords.Any())
+    {
+        <div>
+            <h4>Test your knowledge</h4>
+            @if (currentQuizWord != null)
             {
-                <p style="color: @(isCorrect ? "green" : "red")">
-                    @(isCorrect ? "Correct!" : $"Incorrect. The correct answer is {currentQuizWord?.Translation}.")
-                </p>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">What is the translation for: <strong>@currentQuizWord.Word</strong>?</p>
+
+                        <input type="text" class="form-control" @bind="userAnswer" placeholder="Your answer" />
+
+                        <button class="btn btn-primary mt-2" @onclick="CheckAnswer">Submit</button>
+
+                        @if (showResult)
+                        {
+                            <p class="mt-2" style="color: @(isCorrect ? "green" : "red")">
+                                @(isCorrect ? "Correct!" : $"Incorrect. The correct answer is {currentQuizWord?.Translation}.")
+                            </p>
+                        }
+                    </div>
+                </div>
             }
-        }
-        else
-        {
-            <p>You have completed the quiz!</p>
-        }
-    </div>
-}
-else
-{
-    <p>No learned words available for the quiz. Mark words as learned first!</p>
-}
+            else
+            {
+                <p>You have completed the quiz!</p>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No learned words available for the quiz. Mark words as learned first!</p>
+    }
+</div>
+
 
 @code {
     private List<VocabularyWord> learnedWords = new();
@@ -43,7 +51,6 @@ else
 
     protected override void OnInitialized()
     {
-        // Load learned words
         learnedWords = VocabularyService.GetLearnedWords().ToList();
         LoadNextQuizWord();
     }

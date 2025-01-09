@@ -2,32 +2,43 @@
 @inject VocabularyService VocabularyService
 @using Language_Learning_Flashcards.Data
 
-<h3>Flashcard</h3>
 
-<select @onchange="UpdateLanguage">
-    <option value="">Select Language</option>
-    @foreach (var language in availableLanguages)
-    {
-        <option value="@language">@language</option>
-    }
-</select>
+<div class="container mt-5">
+    <h3>Flashcard</h3>
 
-@if (currentWord != null)
-{
-    <div class="flashcard" @onclick="FlipCard">
-        @if (showWord)
-        {
-            <p>@currentWord.Word</p>
-        }
-        else
-        {
-            <p>@currentWord.Translation</p>
-        }
+    <div class="form-group">
+        <label for="languageSelect">Select Language</label>
+        <select id="languageSelect" class="form-control" @onchange="UpdateLanguage">
+            <option value="">Select Language</option>
+            @foreach (var language in availableLanguages)
+            {
+                <option value="@language">@language</option>
+            }
+        </select>
     </div>
 
-    <button @onclick="MarkAsLearned" disabled="@(!CanMarkAsLearned)">Mark as Learned</button>
-    <button @onclick="SkipWord">Skip</button>
-}
+    @if (currentWord != null)
+    {
+        <div class="card mt-3">
+            <div class="card-body text-center">
+                @if (showWord)
+                {
+                    <h5 class="card-title">@currentWord.Word</h5>
+                }
+                else
+                {
+                    <p class="card-text">@currentWord.Translation</p>
+                }
+            </div>
+            <button class="btn btn-primary btn-block" @onclick="FlipCard">Flip</button>
+        </div>
+
+        <div class="mt-3 d-flex justify-content-between">
+            <button class="btn btn-success" @onclick="MarkAsLearned" disabled="@(!CanMarkAsLearned)">Mark as Learned</button>
+            <button class="btn btn-secondary" @onclick="SkipWord">Skip</button>
+        </div>
+    }
+</div>
 
 @code {
     private string selectedLanguage = string.Empty;
@@ -38,11 +49,9 @@
 
     protected override void OnInitialized()
     {
-        // Preload vocabulary data and determine available languages
         var allWords = VocabularyService.GetAllWords();
         availableLanguages = allWords.Select(w => w.Language).Where(lang => lang != null).Distinct().ToList();
 
-        // Default to the first language (if any)
         if (availableLanguages.Any())
         {
             selectedLanguage = availableLanguages.First();
@@ -76,7 +85,7 @@
         if (wordsQueue.Count > 0)
         {
             currentWord = wordsQueue.Dequeue();
-            showWord = true;  // Show the word by default
+            showWord = true;
         }
         else
         {
