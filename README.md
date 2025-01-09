@@ -88,7 +88,7 @@ Welcome to the **Language Learning Flashcard Application**! This interactive web
 
 ### 📧 Support
 
-For any issues or suggestions, feel free to create an issue in this repository or reach out to us via email: [support@example.com](mailto:aitisamahmed@24gmail.com).
+For any issues or suggestions, feel free to create an issue in this repository or reach out to us via email: [aitisamahmed24@gmail.com](mailto:aitisamahmed24@gmail.com).
 
 ---
 
