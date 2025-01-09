@@ -42,7 +42,7 @@
         var allWords = VocabularyService.GetAllWords();
         availableLanguages = allWords.Select(w => w.Language).Where(lang => lang != null).Distinct().ToList();
 
-        // Default to the first language (if any)
+        // Default to the first // language (if any)
         if (availableLanguages.Any())
         {
             selectedLanguage = availableLanguages.First();
