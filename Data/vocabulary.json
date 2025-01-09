@@ -16,5 +16,287 @@
 		"Word": "Thank You",
 		"Translation": "Gracias",
 		"Language": "Spanish"
+	},
+	{
+		"WordId": 4,
+		"Word": "Please",
+		"Translation": "Por favor",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 5,
+		"Word": "Excuse me",
+		"Translation": "Disculpe",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 6,
+		"Word": "Yes",
+		"Translation": "Sí",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 7,
+		"Word": "No",
+		"Translation": "No",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 8,
+		"Word": "Good Morning",
+		"Translation": "Buenos días",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 9,
+		"Word": "Good Night",
+		"Translation": "Buenas noches",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 10,
+		"Word": "How are you?",
+		"Translation": "¿Cómo estás?",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 11,
+		"Word": "I love you",
+		"Translation": "Te amo",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 12,
+		"Word": "Friend",
+		"Translation": "Amigo",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 13,
+		"Word": "Family",
+		"Translation": "Familia",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 14,
+		"Word": "Work",
+		"Translation": "Trabajo",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 15,
+		"Word": "Happy",
+		"Translation": "Feliz",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 16,
+		"Word": "Sad",
+		"Translation": "Triste",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 17,
+		"Word": "Angry",
+		"Translation": "Enojado",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 18,
+		"Word": "Hungry",
+		"Translation": "Hambriento",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 19,
+		"Word": "Thirsty",
+		"Translation": "Sediento",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 20,
+		"Word": "Bathroom",
+		"Translation": "Baño",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 21,
+		"Word": "Hotel",
+		"Translation": "Hotel",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 22,
+		"Word": "Airport",
+		"Translation": "Aeropuerto",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 23,
+		"Word": "Restaurant",
+		"Translation": "Restaurante",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 24,
+		"Word": "Shopping",
+		"Translation": "Compras",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 25,
+		"Word": "Beach",
+		"Translation": "Playa",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 26,
+		"Word": "Mountain",
+		"Translation": "Montaña",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 27,
+		"Word": "Book",
+		"Translation": "Libro",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 28,
+		"Word": "Pen",
+		"Translation": "Bolígrafo",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 29,
+		"Word": "Paper",
+		"Translation": "Papel",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 30,
+		"Word": "Computer",
+		"Translation": "Computadora",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 31,
+		"Word": "Phone",
+		"Translation": "Teléfono",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 32,
+		"Word": "Car",
+		"Translation": "Coche",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 33,
+		"Word": "Bicycle",
+		"Translation": "Bicicleta",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 34,
+		"Word": "Train",
+		"Translation": "Tren",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 35,
+		"Word": "Bus",
+		"Translation": "Autobús",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 36,
+		"Word": "Ship",
+		"Translation": "Barco",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 37,
+		"Word": "Sun",
+		"Translation": "Sol",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 38,
+		"Word": "Moon",
+		"Translation": "Luna",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 39,
+		"Word": "Star",
+		"Translation": "Estrella",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 40,
+		"Word": "Rainbow",
+		"Translation": "Arcoíris",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 41,
+		"Word": "Water",
+		"Translation": "Agua",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 42,
+		"Word": "Fire",
+		"Translation": "Fuego",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 43,
+		"Word": "Earth",
+		"Translation": "Tierra",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 44,
+		"Word": "Air",
+		"Translation": "Aire",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 45,
+		"Word": "Forest",
+		"Translation": "Bosque",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 46,
+		"Word": "Rain",
+		"Translation": "Lluvia",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 47,
+		"Word": "Snow",
+		"Translation": "Nieve",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 48,
+		"Word": "Cloud",
+		"Translation": "Nube",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 49,
+		"Word": "Ice",
+		"Translation": "Hielo",
+		"Language": "Spanish"
+	},
+	{
+		"WordId": 50,
+		"Word": "Sunset",
+		"Translation": "Atardecer",
+		"Language": "Spanish"
 	}
 ]

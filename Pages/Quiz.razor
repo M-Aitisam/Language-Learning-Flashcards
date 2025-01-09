@@ -1,6 +1,81 @@
-﻿@inject VocabularyService VocabularyService
+﻿@page "/quiz"
+@inject VocabularyService VocabularyService
 @using Language_Learning_Flashcards.Data
 
 <h3>Quiz Mode</h3>
 
-<!-- Implementation for quiz mode where users are tested on learned words -->
+@if (learnedWords != null && learnedWords.Any())
+{
+    <div>
+        <h4>Test your knowledge</h4>
+        @if (currentQuizWord != null)
+        {
+            <p>What is the translation for: <strong>@currentQuizWord.Word</strong>?</p>
+
+            <input @bind="userAnswer" placeholder="Your answer" />
+
+            <button @onclick="CheckAnswer">Submit</button>
+
+            @if (showResult)
+            {
+                <p style="color: @(isCorrect ? "green" : "red")">
+                    @(isCorrect ? "Correct!" : $"Incorrect. The correct answer is {currentQuizWord?.Translation}.")
+                </p>
+            }
+        }
+        else
+        {
+            <p>You have completed the quiz!</p>
+        }
+    </div>
+}
+else
+{
+    <p>No learned words available for the quiz. Mark words as learned first!</p>
+}
+
+@code {
+    private List<VocabularyWord> learnedWords = new();
+    private VocabularyWord? currentQuizWord;
+    private string userAnswer = string.Empty;
+    private bool showResult = false;
+    private bool isCorrect = false;
+
+    protected override void OnInitialized()
+    {
+        // Load learned words
+        learnedWords = VocabularyService.GetLearnedWords().ToList();
+        LoadNextQuizWord();
+    }
+
+    private void LoadNextQuizWord()
+    {
+        showResult = false;
+        isCorrect = false;
+        userAnswer = string.Empty;
+
+        if (learnedWords.Count > 0)
+        {
+            currentQuizWord = learnedWords.FirstOrDefault();
+            learnedWords.RemoveAt(0);
+        }
+        else
+        {
+            currentQuizWord = null;
+        }
+    }
+
+    private void CheckAnswer()
+    {
+        if (currentQuizWord != null)
+        {
+            isCorrect = string.Equals(userAnswer, currentQuizWord.Translation, StringComparison.OrdinalIgnoreCase);
+            showResult = true;
+
+            if (isCorrect)
+            {
+                LoadNextQuizWord();
+            }
+        }
+    }
+}

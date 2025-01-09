@@ -17,11 +17,11 @@
     <div class="flashcard" @onclick="FlipCard">
         @if (showWord)
         {
-            <p>@currentWord?.Word</p>
+            <p>@currentWord.Word</p>
         }
         else
         {
-            <p>@currentWord?.Translation</p>
+            <p>@currentWord.Translation</p>
         }
     </div>
 
@@ -30,7 +30,7 @@
 }
 
 @code {
-    private string? selectedLanguage;
+    private string selectedLanguage = string.Empty;
     private VocabularyWord? currentWord;
     private Queue<VocabularyWord> wordsQueue = new();
     private bool showWord = true;
@@ -40,7 +40,7 @@
     {
         // Preload vocabulary data and determine available languages
         var allWords = VocabularyService.GetAllWords();
-        availableLanguages = allWords.Select(w => w.Language).Distinct().ToList();
+        availableLanguages = allWords.Select(w => w.Language).Where(lang => lang != null).Distinct().ToList();
 
         // Default to the first language (if any)
         if (availableLanguages.Any())
@@ -52,7 +52,7 @@
 
     private void UpdateLanguage(ChangeEventArgs e)
     {
-        selectedLanguage = e.Value?.ToString();
+        selectedLanguage = e.Value?.ToString() ?? string.Empty;
         UpdateWordsQueue();
     }
 
@@ -73,10 +73,10 @@
 
     private void LoadNextWord()
     {
-        if (wordsQueue != null && wordsQueue.Count > 0)
+        if (wordsQueue.Count > 0)
         {
             currentWord = wordsQueue.Dequeue();
-            showWord = true;
+            showWord = true;  // Show the word by default
         }
         else
         {
